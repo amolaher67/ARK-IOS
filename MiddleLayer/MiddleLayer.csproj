@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="CSInward.cs" />
     <Compile Include="CSOutward.cs" />
+    <Compile Include="CSFinicialYear.cs" />
     <Compile Include="GlobalData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -39,10 +40,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaymentVoucher));
             this.list_material = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -70,6 +71,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgv_Inward = new InwardDetails.CustomDataGridView();
+            this.MaterialName = new InwardDetails.TextboxColumn();
+            this.Unit = new InwardDetails.TextboxColumn();
+            this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MachineName = new InwardDetails.TextboxColumn();
             this.dtp_inward = new System.Windows.Forms.DateTimePicker();
             this.lbl_CreditAmt = new System.Windows.Forms.Label();
             this.lbl_CrdAc = new System.Windows.Forms.Label();
@@ -93,15 +100,6 @@
             this.date_From = new System.Windows.Forms.DateTimePicker();
             this.rb_machine = new System.Windows.Forms.CheckBox();
             this.dgv_inward_Item = new System.Windows.Forms.DataGridView();
-            this.InwardNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InwardDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bill_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bill_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bill_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.po_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.po_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sup_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.material_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tab_partMater = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -124,12 +122,17 @@
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaterialName = new InwardDetails.TextboxColumn();
-            this.Unit = new InwardDetails.TextboxColumn();
-            this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MachineName = new InwardDetails.TextboxColumn();
+            this.InwardNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InwardNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InwardDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bill_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bill_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bill_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.po_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.po_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sup_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.material_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FinicialYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Inward)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.error_Show)).BeginInit();
@@ -276,7 +279,7 @@
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(594, 110);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(62, 13);
+            this.label14.Size = new System.Drawing.Size(60, 13);
             this.label14.TabIndex = 23;
             this.label14.Text = "P.O. Date";
             // 
@@ -296,7 +299,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(606, 79);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(50, 13);
+            this.label11.Size = new System.Drawing.Size(48, 13);
             this.label11.TabIndex = 20;
             this.label11.Text = "P.O. No";
             // 
@@ -305,7 +308,7 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(572, 51);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(84, 13);
+            this.label12.Size = new System.Drawing.Size(83, 13);
             this.label12.TabIndex = 19;
             this.label12.Text = "Material Type";
             // 
@@ -330,7 +333,7 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(599, 22);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(56, 13);
+            this.label13.Size = new System.Drawing.Size(55, 13);
             this.label13.TabIndex = 17;
             this.label13.Text = "Bill Type";
             // 
@@ -410,6 +413,7 @@
             this.txt_GrnNo.WaterMarkColor = System.Drawing.Color.Gray;
             this.txt_GrnNo.WaterMarkText = "Manual";
             this.txt_GrnNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Expression_Validating);
+            this.txt_GrnNo.Leave += new System.EventHandler(this.txt_GrnNo_Leave);
             // 
             // label6
             // 
@@ -460,8 +464,8 @@
             this.dgv_Inward.AllowUserToOrderColumns = true;
             this.dgv_Inward.AllowUserToResizeColumns = false;
             this.dgv_Inward.AllowUserToResizeRows = false;
-            this.dgv_Inward.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_Inward.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_Inward.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dgv_Inward.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_Inward.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
@@ -487,6 +491,66 @@
             this.dgv_Inward.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv_Ledger_EditingControlShowing);
             this.dgv_Inward.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Expression_Validating);
             this.dgv_Inward.Leave += new System.EventHandler(this.dgv_Ledger_Leave_1);
+            // 
+            // MaterialName
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.MaterialName.DefaultCellStyle = dataGridViewCellStyle1;
+            this.MaterialName.HeaderText = "Material Description";
+            this.MaterialName.Name = "MaterialName";
+            this.MaterialName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.MaterialName.Width = 300;
+            // 
+            // Unit
+            // 
+            this.Unit.HeaderText = "UOM";
+            this.Unit.Name = "Unit";
+            this.Unit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // qty
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.NullValue = "0.00";
+            this.qty.DefaultCellStyle = dataGridViewCellStyle2;
+            this.qty.HeaderText = "Quantity";
+            this.qty.MaxInputLength = 4;
+            this.qty.Name = "qty";
+            this.qty.Width = 70;
+            // 
+            // rate
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Format = "F2";
+            dataGridViewCellStyle3.NullValue = "0.00";
+            this.rate.DefaultCellStyle = dataGridViewCellStyle3;
+            this.rate.HeaderText = "Rate";
+            this.rate.MaxInputLength = 10;
+            this.rate.Name = "rate";
+            this.rate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.rate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.rate.Width = 80;
+            // 
+            // Amount
+            // 
+            dataGridViewCellStyle4.Format = "F2";
+            this.Amount.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Amount.HeaderText = "Amount";
+            this.Amount.Name = "Amount";
+            this.Amount.ReadOnly = true;
+            this.Amount.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Amount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Amount.Width = 110;
+            // 
+            // MachineName
+            // 
+            this.MachineName.HeaderText = "Machine Name";
+            this.MachineName.Name = "MachineName";
+            this.MachineName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.MachineName.Width = 300;
             // 
             // dtp_inward
             // 
@@ -515,7 +579,7 @@
             this.lbl_CrdAc.AutoSize = true;
             this.lbl_CrdAc.Location = new System.Drawing.Point(160, 474);
             this.lbl_CrdAc.Name = "lbl_CrdAc";
-            this.lbl_CrdAc.Size = new System.Drawing.Size(83, 13);
+            this.lbl_CrdAc.Size = new System.Drawing.Size(82, 13);
             this.lbl_CrdAc.TabIndex = 0;
             this.lbl_CrdAc.Text = "Total Amount";
             // 
@@ -617,7 +681,7 @@
             this.chk_bill_type.AutoSize = true;
             this.chk_bill_type.Location = new System.Drawing.Point(403, 59);
             this.chk_bill_type.Name = "chk_bill_type";
-            this.chk_bill_type.Size = new System.Drawing.Size(75, 17);
+            this.chk_bill_type.Size = new System.Drawing.Size(74, 17);
             this.chk_bill_type.TabIndex = 95;
             this.chk_bill_type.Text = "Bill Type";
             this.chk_bill_type.UseVisualStyleBackColor = true;
@@ -707,7 +771,7 @@
             this.label7.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(232, 31);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(21, 13);
+            this.label7.Size = new System.Drawing.Size(20, 13);
             this.label7.TabIndex = 83;
             this.label7.Text = "To";
             // 
@@ -751,6 +815,7 @@
             this.dgv_inward_Item.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_inward_Item.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.InwardNo,
+            this.InwardNumber,
             this.InwardDate,
             this.bill_no,
             this.bill_type,
@@ -758,82 +823,14 @@
             this.po_no,
             this.po_date,
             this.sup_name,
-            this.material_type});
+            this.material_type,
+            this.FinicialYear});
             this.dgv_inward_Item.Location = new System.Drawing.Point(11, 135);
             this.dgv_inward_Item.MultiSelect = false;
             this.dgv_inward_Item.Name = "dgv_inward_Item";
             this.dgv_inward_Item.ReadOnly = true;
             this.dgv_inward_Item.Size = new System.Drawing.Size(937, 375);
             this.dgv_inward_Item.TabIndex = 87;
-            // 
-            // InwardNo
-            // 
-            this.InwardNo.DataPropertyName = "inward_no";
-            this.InwardNo.HeaderText = "Inward No";
-            this.InwardNo.Name = "InwardNo";
-            this.InwardNo.ReadOnly = true;
-            // 
-            // InwardDate
-            // 
-            this.InwardDate.DataPropertyName = "inward_date";
-            dataGridViewCellStyle5.Format = "dd/MM/yyyy";
-            this.InwardDate.DefaultCellStyle = dataGridViewCellStyle5;
-            this.InwardDate.HeaderText = "Inward Date";
-            this.InwardDate.Name = "InwardDate";
-            this.InwardDate.ReadOnly = true;
-            // 
-            // bill_no
-            // 
-            this.bill_no.DataPropertyName = "bill_no";
-            this.bill_no.HeaderText = "Bill No";
-            this.bill_no.Name = "bill_no";
-            this.bill_no.ReadOnly = true;
-            // 
-            // bill_type
-            // 
-            this.bill_type.DataPropertyName = "bill_type";
-            this.bill_type.HeaderText = "Bill Type";
-            this.bill_type.Name = "bill_type";
-            this.bill_type.ReadOnly = true;
-            // 
-            // bill_date
-            // 
-            this.bill_date.DataPropertyName = "bill_date";
-            dataGridViewCellStyle6.Format = "dd/MM/yyyy";
-            this.bill_date.DefaultCellStyle = dataGridViewCellStyle6;
-            this.bill_date.HeaderText = "Bill Date";
-            this.bill_date.Name = "bill_date";
-            this.bill_date.ReadOnly = true;
-            // 
-            // po_no
-            // 
-            this.po_no.DataPropertyName = "po_no";
-            this.po_no.HeaderText = "PO NO";
-            this.po_no.Name = "po_no";
-            this.po_no.ReadOnly = true;
-            // 
-            // po_date
-            // 
-            this.po_date.DataPropertyName = "po_date";
-            dataGridViewCellStyle7.Format = "dd/MM/yyyy";
-            this.po_date.DefaultCellStyle = dataGridViewCellStyle7;
-            this.po_date.HeaderText = "PO Date";
-            this.po_date.Name = "po_date";
-            this.po_date.ReadOnly = true;
-            // 
-            // sup_name
-            // 
-            this.sup_name.DataPropertyName = "sup_name";
-            this.sup_name.HeaderText = "Supplier";
-            this.sup_name.Name = "sup_name";
-            this.sup_name.ReadOnly = true;
-            // 
-            // material_type
-            // 
-            this.material_type.DataPropertyName = "material_type";
-            this.material_type.HeaderText = "Material Type";
-            this.material_type.Name = "material_type";
-            this.material_type.ReadOnly = true;
             // 
             // tab_partMater
             // 
@@ -967,6 +964,8 @@
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "VoucherType";
+            dataGridViewCellStyle12.Format = "dd/MM/yyyy";
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridViewTextBoxColumn6.HeaderText = "Voucher Type";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
@@ -977,9 +976,9 @@
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "DrAmount";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle12.Format = "F2";
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle13.Format = "F2";
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridViewTextBoxColumn7.HeaderText = "Debit";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
@@ -989,9 +988,9 @@
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "CrAmount";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle13.Format = "F2";
-            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle14.Format = "F2";
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridViewTextBoxColumn8.HeaderText = "Credit";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
@@ -1001,8 +1000,8 @@
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "material_type";
-            dataGridViewCellStyle14.NullValue = "0";
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle15.NullValue = "0";
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridViewTextBoxColumn9.HeaderText = "TypeUINo";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
@@ -1047,65 +1046,88 @@
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.ReadOnly = true;
             // 
-            // MaterialName
+            // InwardNo
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.MaterialName.DefaultCellStyle = dataGridViewCellStyle1;
-            this.MaterialName.HeaderText = "Material Description";
-            this.MaterialName.Name = "MaterialName";
-            this.MaterialName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.MaterialName.Width = 300;
+            this.InwardNo.DataPropertyName = "inward_no";
+            this.InwardNo.HeaderText = "Inward ID";
+            this.InwardNo.Name = "InwardNo";
+            this.InwardNo.ReadOnly = true;
             // 
-            // Unit
+            // InwardNumber
             // 
-            this.Unit.HeaderText = "UOM";
-            this.Unit.Name = "Unit";
-            this.Unit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.InwardNumber.DataPropertyName = "Inwardnumber";
+            this.InwardNumber.HeaderText = "Inward Number";
+            this.InwardNumber.Name = "InwardNumber";
+            this.InwardNumber.ReadOnly = true;
             // 
-            // qty
+            // InwardDate
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.NullValue = "0.00";
-            this.qty.DefaultCellStyle = dataGridViewCellStyle2;
-            this.qty.HeaderText = "Quantity";
-            this.qty.MaxInputLength = 4;
-            this.qty.Name = "qty";
-            this.qty.Width = 70;
+            this.InwardDate.DataPropertyName = "inward_date";
+            dataGridViewCellStyle5.Format = "dd/MM/yyyy";
+            this.InwardDate.DefaultCellStyle = dataGridViewCellStyle5;
+            this.InwardDate.HeaderText = "Inward Date";
+            this.InwardDate.Name = "InwardDate";
+            this.InwardDate.ReadOnly = true;
             // 
-            // rate
+            // bill_no
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Format = "F2";
-            dataGridViewCellStyle3.NullValue = "0.00";
-            this.rate.DefaultCellStyle = dataGridViewCellStyle3;
-            this.rate.HeaderText = "Rate";
-            this.rate.MaxInputLength = 10;
-            this.rate.Name = "rate";
-            this.rate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.rate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.rate.Width = 80;
+            this.bill_no.DataPropertyName = "bill_no";
+            this.bill_no.HeaderText = "Bill No";
+            this.bill_no.Name = "bill_no";
+            this.bill_no.ReadOnly = true;
             // 
-            // Amount
+            // bill_type
             // 
-            dataGridViewCellStyle4.Format = "F2";
-            this.Amount.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Amount.HeaderText = "Amount";
-            this.Amount.Name = "Amount";
-            this.Amount.ReadOnly = true;
-            this.Amount.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Amount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Amount.Width = 110;
+            this.bill_type.DataPropertyName = "bill_type";
+            this.bill_type.HeaderText = "Bill Type";
+            this.bill_type.Name = "bill_type";
+            this.bill_type.ReadOnly = true;
             // 
-            // MachineName
+            // bill_date
             // 
-            this.MachineName.HeaderText = "Machine Name";
-            this.MachineName.Name = "MachineName";
-            this.MachineName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.MachineName.Width = 300;
+            this.bill_date.DataPropertyName = "bill_date";
+            dataGridViewCellStyle6.Format = "dd/MM/yyyy";
+            this.bill_date.DefaultCellStyle = dataGridViewCellStyle6;
+            this.bill_date.HeaderText = "Bill Date";
+            this.bill_date.Name = "bill_date";
+            this.bill_date.ReadOnly = true;
+            // 
+            // po_no
+            // 
+            this.po_no.DataPropertyName = "po_no";
+            this.po_no.HeaderText = "PO NO";
+            this.po_no.Name = "po_no";
+            this.po_no.ReadOnly = true;
+            // 
+            // po_date
+            // 
+            this.po_date.DataPropertyName = "po_date";
+            dataGridViewCellStyle7.Format = "dd/MM/yyyy";
+            this.po_date.DefaultCellStyle = dataGridViewCellStyle7;
+            this.po_date.HeaderText = "PO Date";
+            this.po_date.Name = "po_date";
+            this.po_date.ReadOnly = true;
+            // 
+            // sup_name
+            // 
+            this.sup_name.DataPropertyName = "sup_name";
+            this.sup_name.HeaderText = "Supplier";
+            this.sup_name.Name = "sup_name";
+            this.sup_name.ReadOnly = true;
+            // 
+            // material_type
+            // 
+            this.material_type.DataPropertyName = "material_type";
+            this.material_type.HeaderText = "Material Type";
+            this.material_type.Name = "material_type";
+            this.material_type.ReadOnly = true;
+            // 
+            // FinicialYear
+            // 
+            this.FinicialYear.DataPropertyName = "FinicialYear";
+            this.FinicialYear.HeaderText = "Finicial Year";
+            this.FinicialYear.Name = "FinicialYear";
+            this.FinicialYear.ReadOnly = true;
             // 
             // PaymentVoucher
             // 
@@ -1216,7 +1238,14 @@
         private System.Windows.Forms.ListBox list_partmaster;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label15;
+        private TextboxColumn MaterialName;
+        private TextboxColumn Unit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+        private TextboxColumn MachineName;
         private System.Windows.Forms.DataGridViewTextBoxColumn InwardNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn InwardNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn InwardDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn bill_no;
         private System.Windows.Forms.DataGridViewTextBoxColumn bill_type;
@@ -1225,11 +1254,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn po_date;
         private System.Windows.Forms.DataGridViewTextBoxColumn sup_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn material_type;
-        private TextboxColumn MaterialName;
-        private TextboxColumn Unit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
-        private TextboxColumn MachineName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FinicialYear;
     }
 }

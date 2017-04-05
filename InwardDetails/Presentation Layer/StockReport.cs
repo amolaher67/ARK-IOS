@@ -66,9 +66,8 @@ namespace InwardDetails
 
                 dgv_outward_Item.DataSource = null;
                 dgv_outward_Item.AutoGenerateColumns = false;
-
                 dt = obj.DislayStock(2);
-                if (dt.Rows.Count > 0)
+                if (dt!=null && dt.Rows.Count > 0)
                     dgv_outward_Item.DataSource = dt;
                 else
                     MessageBox.Show("Result Not Found.......", "IOS", MessageBoxButtons.OK, MessageBoxIcon.Information);

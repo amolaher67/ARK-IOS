@@ -1,11 +1,15 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InwardDetails", "InwardDetails\InwardDetails.csproj", "{3F9FEE81-0FC5-4EFB-A3F6-A46998251E61}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiddleLayer", "MiddleLayer\MiddleLayer.csproj", "{78FEBE3A-67E8-4778-8319-00E1473816CA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBLayer", "DBLayer\DBLayer.csproj", "{49911575-8380-416A-97C4-34F91954DF24}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "InwardSetup", "InwardSetup\InwardSetup.vdproj", "{97ABBFDF-3112-44C0-BD42-19D7D9FE1B24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +51,12 @@ Global
 		{49911575-8380-416A-97C4-34F91954DF24}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{49911575-8380-416A-97C4-34F91954DF24}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{49911575-8380-416A-97C4-34F91954DF24}.Release|x86.ActiveCfg = Release|Any CPU
+		{97ABBFDF-3112-44C0-BD42-19D7D9FE1B24}.Debug|Any CPU.ActiveCfg = Debug
+		{97ABBFDF-3112-44C0-BD42-19D7D9FE1B24}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{97ABBFDF-3112-44C0-BD42-19D7D9FE1B24}.Debug|x86.ActiveCfg = Debug
+		{97ABBFDF-3112-44C0-BD42-19D7D9FE1B24}.Release|Any CPU.ActiveCfg = Release
+		{97ABBFDF-3112-44C0-BD42-19D7D9FE1B24}.Release|Mixed Platforms.ActiveCfg = Release
+		{97ABBFDF-3112-44C0-BD42-19D7D9FE1B24}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

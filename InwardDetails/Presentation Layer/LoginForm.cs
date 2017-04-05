@@ -35,8 +35,9 @@ namespace InwardDetails.Presentation_Layer
             else if (txt_login.Text.Trim().Equals("admin") && txt_password.Text.Trim().Equals("ark"))
             {
 
-                GlobalData.CurrentUser = "admin";        
-
+                GlobalData.CurrentUser = "admin";
+                GlobalData.CurrentFinicialYear = comboFinicialYear.SelectedText;
+                GlobalData.CurrentFinicialYearID = Convert.ToInt32(comboFinicialYear.SelectedValue);
                 //fileMenu.Enabled = true;
                 //reporMenu.Enabled = true;
                 //login_group.Visible = false;
@@ -47,11 +48,11 @@ namespace InwardDetails.Presentation_Layer
             }
             else
             {
-                
+
                 MessageBox.Show("Invalid User Name And password combination", "IOS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_login.ResetText();
                 txt_password.ResetText();
-               
+
             }
         }
 
@@ -64,6 +65,20 @@ namespace InwardDetails.Presentation_Layer
         private void LoginForm_Load(object sender, EventArgs e)
         {
             GlobalData.CurrentUser = string.Empty;
+
+            //Load Finicial Years
+            CSFinicialYear objCsFin = new CSFinicialYear();
+            var finYearsData = objCsFin.getAllFinicialYears();
+
+            comboFinicialYear.DisplayMember = "FinicialYear";
+            comboFinicialYear.ValueMember = "FinicialYearID";
+            comboFinicialYear.DataSource = finYearsData;
+
+            var selectedRow = finYearsData.AsEnumerable().Where(s => s.Field<bool>("isActive") == true);
+
+            if (selectedRow.Any() && selectedRow.Count() > 0)
+                comboFinicialYear.SelectedValue = selectedRow.FirstOrDefault().Field<int>("FinicialYearID");
+
         }
     }
 }

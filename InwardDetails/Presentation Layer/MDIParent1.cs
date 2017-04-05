@@ -181,13 +181,20 @@ namespace InwardDetails
                 Application.OpenForms["Help"].Activate();
         }
 
+        private void finicialYearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
+            if (Application.OpenForms["FinicialYear"] == null)
+            {
+                FinicialYear obj = new FinicialYear();
 
-
-
-
-
-
-
+                obj.MdiParent = this;
+                obj.Show();
+                obj.ShowInTaskbar = false;
+            }
+            else
+                Application.OpenForms["Help"].Activate();
+         
+        }
     }
 }

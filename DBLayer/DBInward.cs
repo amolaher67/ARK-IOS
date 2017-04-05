@@ -17,7 +17,7 @@ namespace DBLayer
         DataSet ds;
         DataTable dt;
 
-        public void FillList(ListBox list, TextBox txt, string str, string dispmem,int table_name)
+        public void FillList(ListBox list, TextBox txt, string str, string dispmem, int table_name)
         {
             try
             {
@@ -48,14 +48,14 @@ namespace DBLayer
         }
 
         //This 
-        public DataTable getAllMaterial(String str,int table_name)
+        public DataTable getAllMaterial(String str, int table_name)
         {
-             obj = new CommonDBClass();
-             dt = new DataTable();
-             ds = new DataSet();
+            obj = new CommonDBClass();
+            dt = new DataTable();
+            ds = new DataSet();
 
             cmd = new SqlCommand("GetAccountInfo");
-            cmd.Parameters.Add(new SqlParameter("str",str));
+            cmd.Parameters.Add(new SqlParameter("str", str));
             cmd.Parameters.Add(new SqlParameter("table_name", table_name));
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = obj.Executer(cmd);
@@ -66,13 +66,13 @@ namespace DBLayer
         }
 
         //This function used to save inward 
-        public void saveInward(long grn_no,DateTime inward_date,String sup,String bill_no,DateTime billdate,String billtype,String material_type,String pono,String podate,Double Total)
+        public long saveInward(long grn_no, DateTime inward_date, String sup, String bill_no, DateTime billdate, String billtype, String material_type, String pono, DateTime? podate, Double Total, string inwardNumber, int finicialYearID)
         {
 
-             obj = new CommonDBClass(); 
+            obj = new CommonDBClass();
             cmd = new SqlCommand("Insert_Inward");
-            cmd.Parameters.Add(new SqlParameter("grn_no",grn_no));
-            cmd.Parameters.Add(new SqlParameter("sup",sup));
+            cmd.Parameters.Add(new SqlParameter("grn_no", grn_no)).Direction = ParameterDirection.Output;
+            cmd.Parameters.Add(new SqlParameter("sup", sup));
             cmd.Parameters.Add(new SqlParameter("inward_date", inward_date));
             cmd.Parameters.Add(new SqlParameter("bill_no", bill_no));
             cmd.Parameters.Add(new SqlParameter("billdate", billdate));
@@ -81,14 +81,22 @@ namespace DBLayer
             cmd.Parameters.Add(new SqlParameter("pono", pono));
             cmd.Parameters.Add(new SqlParameter("podate", podate));
             cmd.Parameters.Add(new SqlParameter("Total", Total));
+
+            cmd.Parameters.Add(new SqlParameter("inwardNumber", inwardNumber));
+            cmd.Parameters.Add(new SqlParameter("finicialYearID", finicialYearID));
+
             cmd.CommandType = CommandType.StoredProcedure;
-            obj.Executer(cmd,Type.NonQueryType);
+            obj.Executer(cmd, Type.NonQueryType);
+           
+            var val=cmd.Parameters["grn_no"].Value;
+
+            return Convert.ToInt64(val);
+   
         }
         //function for updating record
 
-        public void UpdateInward(long grn_no, DateTime inward_date, String sup, String bill_no, DateTime billdate, String billtype, String material_type, String pono, String podate, Double Total)
+        public void UpdateInward(long grn_no, DateTime inward_date, String sup, String bill_no, DateTime billdate, String billtype, String material_type, String pono, DateTime? podate, Double Total)
         {
-
             obj = new CommonDBClass();
             cmd = new SqlCommand("Update_Inward");
             cmd.Parameters.Add(new SqlParameter("grn_no", grn_no));
@@ -108,7 +116,7 @@ namespace DBLayer
         //This function used fro save Inward Item
         public void SaveInwardItem(long GrnNo, String MaterialName, String MaterialUnit, Double Material_qty, double Material_rate, double Material_Amount, String Material_machine)
         {
-             obj = new CommonDBClass();
+            obj = new CommonDBClass();
             cmd = new SqlCommand("InsertInwardItem");
             cmd.Parameters.Add(new SqlParameter("GrnNo", GrnNo));
             cmd.Parameters.Add(new SqlParameter("MaterialName", MaterialName));
@@ -140,9 +148,9 @@ namespace DBLayer
             cmd.CommandType = CommandType.StoredProcedure;
             obj.Executer(cmd, Type.NonQueryType);
         }
-        
+
         //This fuction is used for searching inward item date wise
-        public DataTable search(DateTime dt1, DateTime dt2,int flag)
+        public DataTable search(DateTime dt1, DateTime dt2, int flag)
         {
             obj = new CommonDBClass();
             dt = new DataTable();
@@ -150,27 +158,27 @@ namespace DBLayer
             cmd = new SqlCommand("SerachInward");
             cmd.Parameters.Add(new SqlParameter("dt1", dt1));
             cmd.Parameters.Add(new SqlParameter("dt2", dt2));
-            cmd.Parameters.Add(new SqlParameter("flag",flag));
+            cmd.Parameters.Add(new SqlParameter("flag", flag));
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = obj.Executer(cmd);
             da.Fill(ds);
             dt = ds.Tables[0];
             return dt;
-        
+
         }
 
         //overload search function here for machine wise search
-         //Machine wise beetwwen dates  
-        public DataTable search(String mc,DateTime dt1,DateTime dt2,int flag)
+        //Machine wise beetwwen dates  
+        public DataTable search(String mc, DateTime dt1, DateTime dt2, int flag)
         {
             obj = new CommonDBClass();
             dt = new DataTable();
             ds = new DataSet();
             cmd = new SqlCommand("SerachInward");
-           
-            cmd.Parameters.Add(new SqlParameter("dt1",dt1));
+
+            cmd.Parameters.Add(new SqlParameter("dt1", dt1));
             cmd.Parameters.Add(new SqlParameter("dt2", dt2));
-            cmd.Parameters.Add(new SqlParameter("flag",flag));
+            cmd.Parameters.Add(new SqlParameter("flag", flag));
             cmd.Parameters.Add(new SqlParameter("mc", mc));
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = obj.Executer(cmd);
@@ -180,10 +188,10 @@ namespace DBLayer
         }
         public DataTable FillMachine()
         {
-            
+
             dt = new DataTable();
             obj = new CommonDBClass();
-            dt=obj.Executer("SELECT DISTINCT MachineName FROM Outward_Item");
+            dt = obj.Executer("SELECT DISTINCT MachineName FROM Outward_Item");
             return dt;
         }
         public DataTable FillMachine1()
@@ -221,11 +229,11 @@ namespace DBLayer
         {
             obj = new CommonDBClass();
             cmd = new SqlCommand("AddMaterialName");
-            cmd.Parameters.Add(new SqlParameter("MaterialName",Name));
+            cmd.Parameters.Add(new SqlParameter("MaterialName", Name));
             cmd.CommandType = CommandType.StoredProcedure;
             obj.Executer(cmd, Type.NonQueryType);
         }
-          
-    
+
+
     }
 }

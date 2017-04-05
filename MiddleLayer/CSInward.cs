@@ -21,9 +21,10 @@ namespace MiddleLayer
         private String _PONO;
         private Double _Total;
         private string _InwardNumber;
-        
+        private int  _CurrentFinicialYearID;
+        private DateTime? _PODate;
 
-     //Inward item varial
+        //Inward item varial
 
         private String _MaterialName;
         private String _MaterialUnit;
@@ -43,14 +44,14 @@ namespace MiddleLayer
             get { return _Material_rate; }
             set { _Material_rate = value; }
         }
-       
+
 
         public double Material_Amount
         {
             get { return _Material_Amount; }
             set { _Material_Amount = value; }
         }
-       
+
 
         public String Material_machine
         {
@@ -75,7 +76,7 @@ namespace MiddleLayer
             set { _Total = value; }
         }
 
-   //Set Properties for all members of Inward Class     
+        //Set Properties for all members of Inward Class     
         public long GrnNo
         {
             get { return _GrnNo; }
@@ -86,50 +87,50 @@ namespace MiddleLayer
             get { return _BillNo; }
             set { _BillNo = value; }
         }
-        
+
         public DateTime BillDate
         {
             get { return _BillDate; }
             set { _BillDate = value; }
         }
-       
+
 
         public DateTime InwardDate
         {
             get { return _InwardDate; }
             set { _InwardDate = value; }
         }
-        
+
 
         public string SupName
         {
             get { return _SupName; }
             set { _SupName = value; }
         }
-       
+
 
         public string BillType
         {
             get { return _BillType; }
             set { _BillType = value; }
         }
-       
+
 
         public string MaterialType
         {
             get { return _MaterialType; }
             set { _MaterialType = value; }
         }
-   
+
 
         public String PONO
         {
             get { return _PONO; }
             set { _PONO = value; }
         }
-        private String _PODate;
+       
 
-        public String PODate
+        public DateTime? PODate
         {
             get { return _PODate; }
             set { _PODate = value; }
@@ -148,18 +149,41 @@ namespace MiddleLayer
             }
         }
 
+        public int CurrentFinicialYearID
+        {
+            get
+            {
+                return _CurrentFinicialYearID;
+            }
+
+            set
+            {
+                _CurrentFinicialYearID = value;
+            }
+        }
+
 
         //Next Code Is used to get All Supplier From Databse and return dataset of that
 
         public DataTable ChkBillPresent()
         {
             obj = new CommonDBClass();
-            return obj.Executer("SELECT * FROM inward where bill_no='"+_BillNo+"' and sup_name='"+_SupName+"' " );
+            return obj.Executer("SELECT * FROM inward where bill_no='" + _BillNo + "' and sup_name='" + _SupName + "' ");
         }
-        
+
+        public bool CheckGrnisDuplicateinThisFinicialYear()
+        {
+            obj = new CommonDBClass();
+            var inwardData = obj.Executer("SELECT * FROM inward where Inwardnumber=" + _InwardNumber + " and FinicialYearID='" + GlobalData.CurrentFinicialYearID + "' ");
+            if (inwardData != null && inwardData.Rows.Count > 0)
+                return true;
+            else
+                return false;
+        }
+
         public DataTable getSupplier()
         {
-             obj = new CommonDBClass();
+            obj = new CommonDBClass();
             return obj.Executer("SELECT DISTINCT sup_name FROM inward");
         }
 
@@ -167,34 +191,33 @@ namespace MiddleLayer
         {
             obj = new CommonDBClass();
             return obj.Executer("SELECT DISTINCT material_type FROM inward");
-        
+
         }
         //this function get next no of grn
         public long getMax()
         {
             obj = new CommonDBClass();
-            return obj.FindMax("Inward","inward_no");
+            return obj.FindMax("Inward", "inward_no");
         }
 
-        public string  getMaxNumber()
+        public long getMaxNumber(int finicialYearID)
         {
-            using (obj = new CommonDBClass())
-            {
-                return obj.FindMax("Inward", "Inwardnumber");
-            }
+            obj = new CommonDBClass();
+            return obj.FindMax("Inward", "Inwardnumber", finicialYearID);
         }
-        public void FillList(ListBox list, TextBox txt, string str, string dispmem,int table_name)
+
+        public void FillList(ListBox list, TextBox txt, string str, string dispmem, int table_name)
         {
             DBInward obj = new DBInward();
             obj.FillList(list, txt, str, dispmem, table_name);
         }
-  
+
         //Function which saves the information of inward
 
         public void saveInward()
         {
             DBInward obj = new DBInward();
-            obj.saveInward(_GrnNo,_InwardDate,_SupName,_BillNo,_BillDate,_BillType,_MaterialType,_PONO,_PODate,_Total);
+            _GrnNo = obj.saveInward(_GrnNo, _InwardDate, _SupName, _BillNo, _BillDate, _BillType, _MaterialType, _PONO, _PODate, _Total,_InwardNumber,_CurrentFinicialYearID);
         }
 
         //this function used for Save inward item
@@ -203,7 +226,7 @@ namespace MiddleLayer
         {
             DBInward obj = new DBInward();
             obj.SaveInwardItem(_GrnNo, _MaterialName.ToUpperInvariant(), _MaterialUnit, _Material_qty, _Material_rate, _Material_Amount, _Material_machine.ToUpperInvariant());
-       
+
         }
         //fuction for updating inward
         public void UpdateInward()
@@ -226,14 +249,14 @@ namespace MiddleLayer
             obj.DeleteInward(_GrnNo);
         }
         //functiom for searching data datewise
-        public DataTable search(DateTime dt1, DateTime dt2,int flag)
+        public DataTable search(DateTime dt1, DateTime dt2, int flag)
         {
-             DBInward obj = new DBInward();
-             return obj.search( dt1, dt2,flag);
+            DBInward obj = new DBInward();
+            return obj.search(dt1, dt2, flag);
         }
 
         //overload search function for machinewiase search
-        public DataTable search(String input,DateTime dt1,DateTime dt2,int flag)
+        public DataTable search(String input, DateTime dt1, DateTime dt2, int flag)
         {
             DBInward obj = new DBInward();
             return obj.search(input, dt1, dt2, flag);
@@ -241,18 +264,18 @@ namespace MiddleLayer
         public DataTable FillMachine()
         {
             DBInward obj = new DBInward();
-           return obj.FillMachine1(); 
+            return obj.FillMachine1();
         }
         public DataTable GetAllUnit()
         {
             DBInward obj = new DBInward();
-            return obj.FillUnits(); 
+            return obj.FillUnits();
         }
         public DataTable GetInward()
         {
             DBInward obj = new DBInward();
             return obj.GetInward(_GrnNo);
-  
+
         }
 
         public DataTable GetInwardItem()
@@ -264,7 +287,7 @@ namespace MiddleLayer
         public void AddNewMaterial(String Name)
         {
             DBInward obj = new DBInward();
-            obj.AddNewMaterial(Name); 
+            obj.AddNewMaterial(Name);
 
         }
 

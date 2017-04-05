@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.login_group = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboFinicialYear = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_login = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.txt_password = new InwardDetails.WaterMarkTextBox();
             this.txt_login = new InwardDetails.WaterMarkTextBox();
             this.login_group.SuspendLayout();
@@ -46,7 +46,7 @@
             // 
             this.login_group.BackColor = System.Drawing.Color.Transparent;
             this.login_group.Controls.Add(this.label3);
-            this.login_group.Controls.Add(this.comboBox1);
+            this.login_group.Controls.Add(this.comboFinicialYear);
             this.login_group.Controls.Add(this.pictureBox1);
             this.login_group.Controls.Add(this.btn_cancel);
             this.login_group.Controls.Add(this.label2);
@@ -60,6 +60,23 @@
             this.login_group.Size = new System.Drawing.Size(463, 224);
             this.login_group.TabIndex = 15;
             this.login_group.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(10, 118);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 14);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Finincial Year";
+            // 
+            // comboFinicialYear
+            // 
+            this.comboFinicialYear.FormattingEnabled = true;
+            this.comboFinicialYear.Location = new System.Drawing.Point(8, 135);
+            this.comboFinicialYear.Name = "comboFinicialYear";
+            this.comboFinicialYear.Size = new System.Drawing.Size(218, 22);
+            this.comboFinicialYear.TabIndex = 2;
             // 
             // pictureBox1
             // 
@@ -80,7 +97,7 @@
             this.btn_cancel.Location = new System.Drawing.Point(103, 177);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(95, 38);
-            this.btn_cancel.TabIndex = 3;
+            this.btn_cancel.TabIndex = 4;
             this.btn_cancel.Text = "Cancel";
             this.btn_cancel.UseVisualStyleBackColor = true;
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
@@ -113,27 +130,10 @@
             this.btn_login.Location = new System.Drawing.Point(10, 177);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(87, 38);
-            this.btn_login.TabIndex = 2;
+            this.btn_login.TabIndex = 3;
             this.btn_login.Text = "Log In";
             this.btn_login.UseVisualStyleBackColor = true;
             this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(8, 135);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(218, 22);
-            this.comboBox1.TabIndex = 21;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 118);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 14);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "Finincial Year";
             // 
             // txt_password
             // 
@@ -188,6 +188,6 @@
         private System.Windows.Forms.Button btn_login;
         private WaterMarkTextBox txt_login;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboFinicialYear;
     }
 }

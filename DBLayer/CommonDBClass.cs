@@ -135,14 +135,20 @@ namespace DBLayer
 
 
 
-
-        public long FindMax(string table, String column, string finicialyear = "")                                                    //----------------------------------Get max id
+        //----------------------------------Get max id
+        public long FindMax(string table, String column, int finicialYearId = 0 )                                                    
         {
             long max = 0;
-            if (finicialyear == "")
-            { string query = "SELECT MAX(" + column + ") FROM " + table; }
+            string query = "";
+
+            if (finicialYearId == 0 )
+            {
+                 query= "SELECT MAX(" + column + ") FROM " + table;
+            }
             else
-            { string query = "SELECT MAX(" + column + ") FROM " + table WHERE;finicialyear= ; }
+            {
+                 query = "SELECT MAX(" + column + ") FROM " + table + " WHERE FinicialYearID=" + finicialYearId;
+            }
             try
             {
                 if ("Open" == con.State.ToString())
@@ -158,15 +164,8 @@ namespace DBLayer
             catch (Exception)
             {
             }
-
             return max + 1;
         }
-
-
-
-
-
-
 
         public DataTable GetInfo(int flag, string Tablename, String cnd1, String cnd2, String Attribute)                                                                         //-----------------------------------Datatable(Procedure name, Flag,Condition)                                                                    
         {

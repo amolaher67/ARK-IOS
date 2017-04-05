@@ -116,8 +116,13 @@ namespace DBLayer
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = obj.Executer(cmd);
             da.Fill(ds);
-            dt = ds.Tables[0];
-            return dt;
+            if (ds.Tables.Count > 0)
+            {
+                dt = ds.Tables[0];
+                return dt;
+            }
+            else
+                return null;
         }
         public DataTable FillMaterial()
         {

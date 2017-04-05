@@ -34,6 +34,7 @@
             this.logiInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.finicialYearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -44,7 +45,8 @@
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.finicialYearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel_FinYear = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -72,7 +74,7 @@
             // userLogToolStripMenuItem
             // 
             this.userLogToolStripMenuItem.Name = "userLogToolStripMenuItem";
-            this.userLogToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.userLogToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.userLogToolStripMenuItem.Text = "User Log ";
             this.userLogToolStripMenuItem.Click += new System.EventHandler(this.userLogToolStripMenuItem_Click);
             // 
@@ -89,6 +91,14 @@
             this.fileMenu.Name = "fileMenu";
             this.fileMenu.Size = new System.Drawing.Size(37, 20);
             this.fileMenu.Text = "&File";
+            // 
+            // finicialYearToolStripMenuItem
+            // 
+            this.finicialYearToolStripMenuItem.Name = "finicialYearToolStripMenuItem";
+            this.finicialYearToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
+            this.finicialYearToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.finicialYearToolStripMenuItem.Text = "Finicial Year";
+            this.finicialYearToolStripMenuItem.Click += new System.EventHandler(this.finicialYearToolStripMenuItem_Click);
             // 
             // newToolStripMenuItem
             // 
@@ -133,7 +143,7 @@
             // stockDisplayToolStripMenuItem
             // 
             this.stockDisplayToolStripMenuItem.Name = "stockDisplayToolStripMenuItem";
-            this.stockDisplayToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.stockDisplayToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.stockDisplayToolStripMenuItem.Text = "Stock Display";
             this.stockDisplayToolStripMenuItem.Click += new System.EventHandler(this.stockDisplayToolStripMenuItem_Click);
             // 
@@ -141,7 +151,9 @@
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel,
-            this.toolStripStatusLabel1});
+            this.toolStripStatusLabel1,
+            this.toolStripStatusLabel2,
+            this.toolStripStatusLabel_FinYear});
             this.statusStrip.Location = new System.Drawing.Point(0, 487);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode;
@@ -156,16 +168,23 @@
             // 
             // toolStripStatusLabel1
             // 
+            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(288, 17);
-            this.toolStripStatusLabel1.Text = "          -Developed By Hyperlink Solution Pvt.Ltd. Pune";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(172, 17);
+            this.toolStripStatusLabel1.Text = "-Developed By SoftSys(Amol)";
             // 
-            // finicialYearToolStripMenuItem
+            // toolStripStatusLabel2
             // 
-            this.finicialYearToolStripMenuItem.Name = "finicialYearToolStripMenuItem";
-            this.finicialYearToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.finicialYearToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.finicialYearToolStripMenuItem.Text = "Finicial Year";
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(87, 17);
+            this.toolStripStatusLabel2.Text = "      Finicial Year";
+            // 
+            // toolStripStatusLabel_FinYear
+            // 
+            this.toolStripStatusLabel_FinYear.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.toolStripStatusLabel_FinYear.Name = "toolStripStatusLabel_FinYear";
+            this.toolStripStatusLabel_FinYear.Size = new System.Drawing.Size(127, 17);
+            this.toolStripStatusLabel_FinYear.Text = "toolStripStatusLabel3";
             // 
             // MDIParent1
             // 
@@ -206,6 +225,8 @@
         private System.Windows.Forms.ToolStripMenuItem logiInToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem userLogToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem finicialYearToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_FinYear;
     }
 }
 
