@@ -36,7 +36,7 @@ namespace InwardDetails.Presentation_Layer
             {
 
                 GlobalData.CurrentUser = "admin";
-                GlobalData.CurrentFinicialYear = comboFinicialYear.SelectedText;
+                GlobalData.CurrentFinicialYear = comboFinicialYear.Text;
                 GlobalData.CurrentFinicialYearID = Convert.ToInt32(comboFinicialYear.SelectedValue);
                 //fileMenu.Enabled = true;
                 //reporMenu.Enabled = true;

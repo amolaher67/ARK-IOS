@@ -91,6 +91,8 @@ namespace InwardDetails
                     fileMenu.Enabled = true;
                     reporMenu.Enabled = true;
                 }
+
+                toolStripStatusLabel_FinYear.Text = GlobalData.CurrentFinicialYear;
                 //login_group.Visible = false;
                 //txt_login.ResetText();
                 //txt_password.ResetText();

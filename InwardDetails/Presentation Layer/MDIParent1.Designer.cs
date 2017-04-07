@@ -44,9 +44,9 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel_FinYear = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -163,28 +163,27 @@
             // toolStripStatusLabel
             // 
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
-            this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
-            this.toolStripStatusLabel.Text = "Status";
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(48, 17);
+            this.toolStripStatusLabel.Text = "Status : ";
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(172, 17);
-            this.toolStripStatusLabel1.Text = "-Developed By SoftSys(Amol)";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(238, 17);
+            this.toolStripStatusLabel1.Text = "Developed by IOS(ARK MachTek Pvt.Ltd.)";
             // 
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(87, 17);
-            this.toolStripStatusLabel2.Text = "      Finicial Year";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(96, 17);
+            this.toolStripStatusLabel2.Text = "      Finicial Year : ";
             // 
             // toolStripStatusLabel_FinYear
             // 
             this.toolStripStatusLabel_FinYear.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.toolStripStatusLabel_FinYear.Name = "toolStripStatusLabel_FinYear";
-            this.toolStripStatusLabel_FinYear.Size = new System.Drawing.Size(127, 17);
-            this.toolStripStatusLabel_FinYear.Text = "toolStripStatusLabel3";
+            this.toolStripStatusLabel_FinYear.Size = new System.Drawing.Size(0, 17);
             // 
             // MDIParent1
             // 
