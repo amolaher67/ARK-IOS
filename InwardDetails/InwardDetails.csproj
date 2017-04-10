@@ -11,7 +11,8 @@
     <RootNamespace>InwardDetails</RootNamespace>
     <AssemblyName>InwardDetails</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -35,6 +36,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>sqldeveloper.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>InwardDetails.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility">

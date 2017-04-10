@@ -225,7 +225,7 @@
         private System.Windows.Forms.ToolStripMenuItem userLogToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem finicialYearToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_FinYear;
+        public System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_FinYear;
     }
 }
 

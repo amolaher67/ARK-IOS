@@ -188,7 +188,7 @@ namespace InwardDetails
 
             if (Application.OpenForms["FinicialYear"] == null)
             {
-                FinicialYear obj = new FinicialYear();
+                FinicialYear obj = new FinicialYear(this);
 
                 obj.MdiParent = this;
                 obj.Show();

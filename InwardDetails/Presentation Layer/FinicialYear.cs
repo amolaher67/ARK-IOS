@@ -15,9 +15,11 @@ namespace InwardDetails.Presentation_Layer
     {
 
         CSFinicialYear obj;
+        MDIParent1 MdiObject = null;
 
-        public FinicialYear()
+        public FinicialYear(MDIParent1 obj)
         {
+            MdiObject = obj;
             InitializeComponent();
         }
 
@@ -38,6 +40,7 @@ namespace InwardDetails.Presentation_Layer
             {
                 GlobalData.CurrentFinicialYearID = Convert.ToInt32(row["FinicialYearID"]);
                 GlobalData.CurrentFinicialYear = Convert.ToString(row["FinicialYear"]);
+                MdiObject.toolStripStatusLabel_FinYear.Text = GlobalData.CurrentFinicialYear;
             }
         }
 
