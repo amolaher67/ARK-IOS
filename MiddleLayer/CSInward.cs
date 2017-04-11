@@ -168,7 +168,7 @@ namespace MiddleLayer
         public DataTable ChkBillPresent()
         {
             obj = new CommonDBClass();
-            return obj.Executer("SELECT * FROM inward where bill_no='" + _BillNo + "' and sup_name='" + _SupName + "' ");
+            return obj.Executer("SELECT * FROM inward where bill_no='" + _BillNo + "' and sup_name='" + _SupName + "' AND FinicialYearID="+GlobalData.CurrentFinicialYearID+" ");
         }
 
         public bool CheckGrnisDuplicateinThisFinicialYear()
